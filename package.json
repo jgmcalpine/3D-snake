@@ -1,7 +1,7 @@
 {
   "name": "snake-redux",
   "version": "1.0.0",
-  "description": "An implementation of snake in React/Redux and Vanilla JS",
+  "description": "Snake in React/Redux and Vanilla JS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "path": "^0.12.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
@@ -20,6 +21,6 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "webpack": "^2.6.1"
+    "webpack": "^2.7.0"
   }
 }
