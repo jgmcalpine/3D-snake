@@ -25,5 +25,31 @@ class Head {
         break;
       default: break;
     }
+
+    checkEdges();
+    checkCannibal();
+
+    // Check if eating apple
+    if (store.apple.top === store.head.top && store.apple.left === store.head.left) {
+      incrementScore();
+      increaseSpeed();
+      setApple();
+      growSnake();
+    }
+
+    if (!store.gameOver) {
+      moveSnake();
+      moveHead(this.node);
+      setTimeout(this.move.bind(this), store.speed);
+    } else {
+      clearTimeout();
+    }
   }
+}
+
+  function moveHead(node) {
+  store.head.left = store.head.left;
+  store.head.top = store.head.top;
+  node.style.transition = `transform ${ store.speed }ms linear`;
+  node.style.transform = `translate(${store.head.left}px, ${store.head.top}px) translateZ(50px)`;
 }
