@@ -1,3 +1,5 @@
+// Set up store
+
 const store = {
   apple: { top: 0, left: 0 },
   head: { top: 0, left: 0 },
@@ -9,6 +11,18 @@ const store = {
   bodyPartId: 0,
   topScore: 0,
 }
+
+// Set the new game conditions
+// Initialize keys to set direction
+// Set the reset game conditions
+// Increment speed
+// Increment score
+// update top score
+// make play again message
+// set game if out of bounds
+// set if cannibal
+
+// Add event listener to load up game
 
 const newGame = () => {
   const apple = new Apple();
@@ -119,6 +133,7 @@ function resetBoard() {
   document.querySelector('#score').innerHTML = `Score: <span>${store.score} </span>`;
   newGame();
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initializeKeys();
