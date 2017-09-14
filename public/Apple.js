@@ -15,12 +15,11 @@ function setApple() {
 
   for (let i = 0; i < store.body.length; i += 1) {
     if (leftLocation === store.body[i].left && topLocation === store.body[i].top) {
-      console.log('resetting apple...');
       setApple();
     }
   }
 
   store.apple.left = leftLocation;
   store.apple.top = topLocation;
-  appleNode.style.transform = `translate(${leftLocation}px, ${topLocation}px translateZ(50px)`;
+  appleNode.style.transform = `translate(${leftLocation}px, ${topLocation}px) translateZ(50px)`;
 }

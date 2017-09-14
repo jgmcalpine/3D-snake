@@ -72,3 +72,55 @@ function checkCannibal() {
     }
   }
 }
+
+function playAgainMessage() {
+  const playAgain = document.createElement('div');
+  playAgain.setAttribute('id', 'play-again');
+  playAgain.innerHTML = 'Press spacebar to play again!';
+  container.appendChild(playAgain);
+}
+
+function setTopScore() {
+  console.log(store.topScore);
+  if (store.score > store.topScore) {
+    store.topScore = store.score;
+    document.querySelector('#high-score').innerHTML = `High score: <span>${store.topScore}</span>`;
+
+    const congratsMessage = document.createElement('div');
+    congratsMessage.setAttribute('id', 'congrats');
+    congratsMessage.innerHTML = 'Great game, you are the best!'
+    container.appendChild(congratsMessage);
+  }
+}
+
+// Reset the initial properties
+function resetBoard() {
+  store.score = 0;
+  store.head = {top: 0, left: 0};
+  store.speed = 300;
+  store.body = [];
+  store.gameOver = false;
+  store.currentDirection = 'down';
+  store.bodyPartId = 0;
+
+  // Empty the elements from the board
+  while(board.firstChild) {
+    document.querySelector('#board').removeChild(board.firstChild)
+  }
+
+  // Remove the elements from the container
+  const playAgainElem = document.getElementById('play-again');
+  const congratsElem = document.getElementById('congrats');
+  playAgainElem.remove();
+  if (congratsElem) congratsElem.remove();
+  
+
+  // Reset the score display
+  document.querySelector('#score').innerHTML = `Score: <span>${store.score} </span>`;
+  newGame();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initializeKeys();
+  newGame();
+});

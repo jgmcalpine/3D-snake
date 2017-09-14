@@ -65,3 +65,98 @@ body {
   width: 50px;
   float: left;
 }
+
+#apple {
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transform: translateX(50px) translate(.1em);
+  box-shadow: 3em 1.5em 3em rgba(0, 0, 0, .3);
+  z-index: 2;
+}
+
+#apple:after {
+  background-color: #b9b991;
+  transform-origin: 100% 100%;
+  transform: rotateX(-90deg) translateY(50px) translateX(-25px);
+  z-index: 2;
+}
+
+#apple:before {
+  background-color: #b49879;
+  transform-origin: 100% 0;
+  transform: rotateY(90deg) translateX(50px) translateZ(-25px);
+  z-index: 2;
+}
+
+#head {
+  height: 50px;
+  width: 50px;
+  background-color: purple;
+  position: absolute;
+  content: '';
+  box-shadow: 3em 1.5em 3em rgba(0, 0, 0, .3);
+}
+
+#head:after {
+  background-color: #6E4C6E;
+  transform-origin: 100% 100%;
+  transform: rotateX(-90deg) translateY(50px) translateX(-25px);
+  z-index: 2;
+}
+
+#head:before {
+  background-color: #5A4B5A;
+  transform-origin: 100% 0;
+  transform: rotateY(90deg) translateX(50px) translateZ(-25px);
+  z-index: 2;
+}
+
+#play-again {
+  color: orange;
+  font-size: 3rem;
+  position: absolute;
+  z-index: 10;
+}
+
+#congrats {
+  z-index: 0;
+  position: absolute;
+}
+
+.body-part {
+  height: 50px;
+  width: 50px;
+  background-color: yellow;
+  position: absolute;
+  float: left;
+  border-radius: 10px;
+  transition: transform 300ms linear;
+  transform-style: preserve-3d;
+  transform: translateX(50px) translate(.1em);
+  box-shadow: 3em 1.5em 3em rgba(0, 0, 0, .3);
+  z-index: 1;
+}
+
+.body-part:after {
+  transform-origin: 100% 100%;
+  transform: rotateX(-90deg) translateY(50px) translateX(-25px);
+  z-index: 1;
+  background-color: black;
+}
+
+.body-part:before {
+  transform-origin: 100% 0;
+  transform: rotateY(90deg) translateX(50px) translateZ(-25px);
+  z-index: 1;
+  background-color: grey;
+}
+
+#congratsMessage {
+  height: 100px;
+  width: 100px;
+  color: black;
+}
+
