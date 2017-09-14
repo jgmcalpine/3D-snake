@@ -1,0 +1,67 @@
+body {
+  width: 100%;
+}
+
+#container {
+  position: relative;
+  height: 600px;
+  width: 600px;
+  margin: 50px auto;
+}
+
+#board {
+  height: 600px;
+  width: 600px;
+  background-color: blue;
+  transform-style: preserve-3d;
+  transform: rotateX(45deg) rotateZ(45deg) rotateY(0deg);
+  text-align: center;
+  position: absolute;
+}
+
+#board::before,
+#board::after {
+  position: absolute;
+  content: '';
+  float: left;
+}
+
+#board::before {
+  height: 600px;
+  width: 50px;
+  background-color: maroon;
+  transform-origin: 100% 0;
+  transform: rotateY(90deg) translateX(50px) translateZ(250px);
+}
+
+#board::after {
+  height: 50px;
+  width: 600px;
+  background-color: pink;
+  transform-origin: 100% 0;
+  transform: rotateX(-90deg) translateY(70px) translateZ(550px) translateX(-350px);
+}
+
+.scoreboard {
+  text-align: center;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+#head,
+#head:after,
+#head:before,
+#apple,
+#apple:before,
+#apple:after,
+.body-part,
+.body-part:before,
+.body-part:after {
+  position: absolute;
+  content: '';
+  height: 50px;
+  width: 50px;
+  float: left;
+}
